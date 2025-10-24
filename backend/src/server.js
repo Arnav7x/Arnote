@@ -13,9 +13,14 @@ connectDB();
 // middleware
 app.use(express.json());
 
+// custom middleware
+// app.use((req, res, next) =>  {
+//   consoleg(`Req method is ${req.method} & URL is ${req.url}`);
+//   next();
+// });
+
 app.use("/api/notes", notesRoutes);
 
 app.listen(PORT, () => {
   console.log('Server is running on PORT:', PORT);
 });
-  
